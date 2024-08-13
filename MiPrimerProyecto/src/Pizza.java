@@ -1,13 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author patri
- */
 public class Pizza {
+    // atributos
+    String nombre;
+    String tamano;
+    String tipoMasa;
+    int precio;
     
+    // constructor
+    
+    // getter y setter
+    
+    // metodos personalizados
 }

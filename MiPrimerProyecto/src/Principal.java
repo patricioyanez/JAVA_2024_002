@@ -21,7 +21,9 @@ public class Principal {
         pizza1.tamano = "mediana";
         pizza1.tipoMasa= "Piedra";
                 
-        
+        System.out.println("Nombre de pizza:" + pizza1.nombre);
+        // imprimir los otros datos 
+        // agregar y mostrar datos de la 2da pizza
     }
     
 }
