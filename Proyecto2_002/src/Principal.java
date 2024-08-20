@@ -33,6 +33,7 @@ public class Principal {
         System.out.println("Tamaño  : " + pizza2.getTamano());
         System.out.println("Precio  : " + pizza2.getPrecio());
         
+        // uso de constructor sin parametros
         Pizza pizza3 = new Pizza();
         // asignar valor a cada atributo
         pizza3.setNombre("Pollo BBQ");
@@ -41,7 +42,10 @@ public class Principal {
         pizza3.setPrecio(18000);        
         pizza3.imprimirDatos();
         
-        
+        // uso de constructor con parametros
+        Pizza pizza4 = new Pizza("Rodeo", "Grande", "Delgada", 20000);
+        pizza4.setPrecio(25000);        
+        pizza4.imprimirDatos();
     }
     
 }
