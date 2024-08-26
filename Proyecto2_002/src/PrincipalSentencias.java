@@ -80,5 +80,24 @@ public class PrincipalSentencias {
         {
             System.out.println("El número es negativo");
         }
+        
+        // solicitar la edad y determinar el rango etario
+        // niño, adolescente, adulto y 3ra edad
+        System.out.print("Ingrese su edad: ");
+        int edad = leerTeclado.nextInt();
+        
+        if(edad < 12)
+        {
+            System.out.println("Niño");
+        }
+        else if (edad < 18) {
+            System.out.println("Adolescente");
+        }
+        else if (edad < 65) {
+            System.out.println("Adulto");
+        }
+        else{
+            System.out.println("3ra Edad");
+        }
     }
 }
