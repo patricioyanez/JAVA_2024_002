@@ -66,5 +66,19 @@ public class PrincipalSentencias {
         }
         
         // determinar si el numero es +, - o neutro
+        System.out.print("Ingrese un 2do numero: ");
+        int valor2 = leerTeclado.nextInt();
+        
+        if(valor2 == 0)
+        {
+            System.out.println("El número neutro");
+        }
+        else if (valor2 > 0) {
+            System.out.println("El número es positivo");
+        }
+        else
+        {
+            System.out.println("El número es negativo");
+        }
     }
 }
