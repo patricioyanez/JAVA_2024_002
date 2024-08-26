@@ -48,5 +48,23 @@ public class PrincipalSentencias {
         String nombre = leerTeclado.next();
         
         System.out.println("Bienvenido " + nombre);
+        
+        // Ejercicio:
+        // preguntar al usuario un numero y determinar 
+        // si es natural o no
+        
+        System.out.println("Ingrese un numero");
+        int valor = leerTeclado.nextInt();
+        
+        if(valor >= 0)
+        {
+            System.out.println("El número es natural");
+        }
+        else
+        {
+            System.out.println("El número no es natural");
+        }
+        
+        // determinar si el numero es +, - o neutro
     }
 }
