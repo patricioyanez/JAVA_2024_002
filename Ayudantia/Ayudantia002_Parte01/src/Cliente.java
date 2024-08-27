@@ -61,7 +61,6 @@ public class Cliente {
         this.correo = correo;
     }
 
-
     public String imprimirDatos() {
         return  "==== Datos del Cliente ====" + 
                 "\nRut      = " + rut + 
