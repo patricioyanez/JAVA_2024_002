@@ -4,7 +4,7 @@ public class PrincipalWhile {
     public static void main(String[] args) {
         Scanner leerTeclado = new Scanner(System.in);
         String opcion = "";
-        while (!opcion.equals("0")) {
+        while (true) {
             System.out.println("===== Menú =====");
             System.out.println("1.- Sumar");
             System.out.println("2.- Restar");
@@ -12,10 +12,22 @@ public class PrincipalWhile {
             System.out.print("Ingrese opción: ");
             opcion = leerTeclado.next();
             
-            if(opcion.equals("1"))
+            if(opcion.equals("0"))
             {
-                System.out.println("=== Sumar ===");
-                
+                break;
+            }
+            else if(opcion.equals("1"))
+            {
+                System.out.println("=== Sumar ===");                
+            }                        
+            else if(opcion.equals("2"))
+            {
+                System.out.println("=== Restar ===");                
+            }
+            else
+            {
+                System.out.println("Opción ingresada no es correcta");
+                continue;
             }
             System.out.println("*** Presione c y enter para continuar");
             leerTeclado.next();
