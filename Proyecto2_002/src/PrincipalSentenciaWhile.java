@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PrincipalWhile {
+public class PrincipalSentenciaWhile {
     public static void main(String[] args) {
         Scanner leerTeclado = new Scanner(System.in);
         String opcion = "";
