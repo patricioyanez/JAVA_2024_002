@@ -45,8 +45,14 @@ public class ClaseString {
         String numero = numeroRut.replace(".", "");
         System.out.println("numero: " + numero);
         
-        // Cambiar el mensaje de una variable: "Hola Mundo!!!" por
+        // Cambiar el mensaje de una variable:
+        // "Hola Mundo!!!" por
         // "chao Mundo!!!"
-        
+        String mensaje = "Hola Mundo!!!";
+        System.out.println(mensaje);
+//        mensaje.replace("Hola", "Chao");
+        System.out.println(mensaje.replace("Hola", "Chao"));
+        mensaje = mensaje.replace("Hola", "Chao");
+        System.out.println(mensaje);
     }
 }
