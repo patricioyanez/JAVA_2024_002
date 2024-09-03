@@ -66,7 +66,8 @@ public class Producto {
         return  "\n==== Producto ====" + 
                 "\nCodigo       = " + codigo + 
                 "\nDescripción  = " + descripcion + 
-                "\nMarca        = " + marca.getNombre() + 
+//                "\nMarca        = " + marca.getNombre()
+                marca.imprimirDatos() +
                 "\nPrecio       = " + precio + 
                 "\nStock        = " + stock;
     }
