@@ -65,11 +65,11 @@ public class Producto {
     public String imprimirDatos() {
         return  "\n==== Producto ====" + 
                 "\nCodigo       = " + codigo + 
-                "\nDescripción  = " + descripcion + 
-//                "\nMarca        = " + marca.getNombre()
-                marca.imprimirDatos() +
+                "\nDescripción  = " + descripcion +
                 "\nPrecio       = " + precio + 
-                "\nStock        = " + stock;
+                "\nStock        = " + stock + 
+//                "\nMarca        = " + marca.getNombre() +
+                marca.imprimirDatos();
     }
     
     
