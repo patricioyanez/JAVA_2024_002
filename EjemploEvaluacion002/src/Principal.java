@@ -42,11 +42,16 @@ public class Principal {
             }
             else if(opcion == 3)
             {
-                System.out.println("**** Opcion 3 ****");
+                System.out.println("**** Costo del servicio ****");
+                vehiculo.setCostoServicio(100000);
+                vehiculo.descuento();
+                System.out.println("Total a pagar:" + vehiculo.getCostoServicio());
+                
             }
             else if(opcion == 4)
             {
-                System.out.println("**** Opcion 4 ****");
+                System.out.println("**** Enviando correo de aviso ****");
+                vehiculo.enviarCorreo();
             }
             else if(opcion == 5)
             {
