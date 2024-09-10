@@ -38,6 +38,12 @@ public class Cliente {
     }
 
     public void setRut(String rut) {
+        if(rut.trim().length() == 0)
+        {            
+            System.out.println("=====> ERROR: el rut no válido");
+            this.rut = "";
+        }
+        else
         this.rut = rut;
     }
 
@@ -46,7 +52,13 @@ public class Cliente {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if(nombre.trim().length() == 0)
+        {            
+            System.out.println("=====> ERROR: el nombre no válida");
+            this.nombre = "";
+        }
+        else
+            this.nombre = nombre;
     }
 
     public int getCodigo() {
@@ -54,7 +66,13 @@ public class Cliente {
     }
 
     public void setCodigo(int codigo) {
-        this.codigo = codigo;
+        if(codigo < 9 || codigo > 99)
+        {            
+            System.out.println("=====> ERROR: cantidad de digitos no válida");
+            this.codigo = 0;
+        }
+        else
+            this.codigo = codigo;
     }
 
     public int getTelefono() {
@@ -74,7 +92,9 @@ public class Cliente {
     }
 
     public String imprimirDatos() {
-        return "Cliente{" + "rut=" + rut + ", nombre=" + nombre + ", codigo=" + codigo + ", telefono=" + telefono + ", correo=" + correo + ", esNuevo=" + esNuevo + '}';
+        return "Cliente{" + "rut=" + rut + ", nombre=" + nombre + 
+                ", codigo=" + codigo + ", telefono=" + telefono + 
+                ", correo=" + correo + ", esNuevo=" + esNuevo + '}';
     }
     
     
