@@ -62,9 +62,19 @@ public class Vehiculo {
     }
 
     public String imprimirDatos() {
-        return "Vehiculo{" + "patente=" + patente + ", kilometraje=" + kilometraje + ", marca=" + marca + ", costoServicio=" + costoServicio + ", cliente=" + cliente.getNombre() + '}';
+        return "Vehiculo{" + "patente=" + patente + 
+                ", kilometraje=" + kilometraje + 
+                ", marca=" + marca + ", costoServicio=" + costoServicio + 
+                ", cliente=" + cliente.getNombre() + '}';
     }
     
-    
+    public void descuento(){
+        
+        
+    }
+    public void enviarCorreo()
+    {
+        
+    }
     
 }
