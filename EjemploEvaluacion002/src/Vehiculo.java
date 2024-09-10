@@ -69,12 +69,19 @@ public class Vehiculo {
     }
     
     public void descuento(){
-        
-        
+        if(cliente.isEsNuevo() || this.costoServicio >= 100000)
+        {
+            this.costoServicio = (int)(this.costoServicio * .9);
+        }        
     }
     public void enviarCorreo()
     {
-        
+        String mensaje = "Estimado: " + cliente.getNombre() +
+                " Escribo para informar que su vehiculo patente " +
+                this.patente + " ya esta listo para su retiro."+ 
+                " su correo es: " + cliente.getCorreo();
+                
+        System.out.println(mensaje);
     }
     
 }
