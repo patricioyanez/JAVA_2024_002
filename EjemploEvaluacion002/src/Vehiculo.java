@@ -74,10 +74,12 @@ public class Vehiculo {
     }
 
     public String imprimirDatos() {
-        return "Vehiculo{" + "patente=" + patente + 
-                ", kilometraje=" + kilometraje + 
-                ", marca=" + marca + ", costoServicio=" + costoServicio + 
-                ", cliente=" + cliente.getNombre() + '}';
+        return  "==== Vehiculo ====" + 
+                "\nPatente          = " + patente + 
+                "\nKilometraje      = " + kilometraje + 
+                "\nMarca            = " + marca + 
+                "\nCosto de Servicio= " + costoServicio + 
+                "\nNombre de Cliente= " + cliente.getNombre();
     }
     
     public void descuento(){
@@ -90,8 +92,8 @@ public class Vehiculo {
     {
         String mensaje = "Estimado: " + cliente.getNombre() +
                 " Escribo para informar que su vehiculo patente " +
-                this.patente + " ya esta listo para su retiro."+ 
-                " su correo es: " + cliente.getCorreo();
+                this.patente.toUpperCase() + " ya esta listo para su retiro."+ 
+                " su correo es: " + cliente.getCorreo().toUpperCase();
                 
         System.out.println(mensaje);
     }

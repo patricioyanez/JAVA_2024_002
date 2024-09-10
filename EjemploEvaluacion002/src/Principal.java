@@ -25,11 +25,11 @@ public class Principal {
                 cliente.setCorreo("fasdfa@mail.com");
                 cliente.setCodigo(32);
                 cliente.setTelefono(89798465);
-                cliente.setEsNuevo(true);
+                cliente.setEsNuevo(false);
                 
                 vehiculo.setPatente("asdf60");
                 vehiculo.setMarca("Kia");
-                vehiculo.setKilometraje(100000);
+                vehiculo.setKilometraje(50000);
                 vehiculo.setCostoServicio(0);
                 vehiculo.setCliente(cliente);
                 System.out.println("**** Datos Creados ****");
@@ -44,7 +44,9 @@ public class Principal {
             else if(opcion == 3)
             {
                 System.out.println("**** Costo del servicio ****");
-                vehiculo.setCostoServicio(100000);
+                System.out.print("Ingrese valor del servicio: ");
+                int valor = leerTeclado.nextInt();
+                vehiculo.setCostoServicio(valor);
                 vehiculo.descuento();
                 System.out.println("Total a pagar:" + vehiculo.getCostoServicio());
                 
