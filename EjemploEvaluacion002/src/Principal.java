@@ -12,7 +12,7 @@ public class Principal {
         {
             System.out.println("1.- Crear Cliente y Vehiculo");
             System.out.println("2.- Mostrar información");
-            System.out.println("3.- Agregra monto de servicio");
+            System.out.println("3.- Agregar monto de servicio");
             System.out.println("4.- Enviar el correo");
             System.out.println("5.- Salir");
             System.out.print("Ingrese opción: ");
@@ -36,7 +36,9 @@ public class Principal {
             }
             else if(opcion == 2)
             {
-                System.out.println("**** Opcion 2 ****");
+                System.out.println("**** Mostrar datos ****");
+                System.out.println(vehiculo.imprimirDatos());
+                System.out.println(cliente.imprimirDatos());
             }
             else if(opcion == 3)
             {
