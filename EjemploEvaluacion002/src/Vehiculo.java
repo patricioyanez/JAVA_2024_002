@@ -34,7 +34,7 @@ public class Vehiculo {
     }
 
     public void setPatente(String patente) {
-        if(this.patente.trim().length() != 6)
+        if(patente.trim().length() != 6)
         {
             System.out.println("=====> ERROR: Patente no válida");
             this.patente = "";

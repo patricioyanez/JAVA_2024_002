@@ -32,7 +32,30 @@ public class Principal {
                 vehiculo.setKilometraje(100000);
                 vehiculo.setCostoServicio(0);
                 vehiculo.setCliente(cliente);
+                System.out.println("**** Datos Creados ****");
             }
+            else if(opcion == 2)
+            {
+                System.out.println("**** Opcion 2 ****");
+            }
+            else if(opcion == 3)
+            {
+                System.out.println("**** Opcion 3 ****");
+            }
+            else if(opcion == 4)
+            {
+                System.out.println("**** Opcion 4 ****");
+            }
+            else if(opcion == 5)
+            {
+                break;
+            }
+            else
+            {
+                System.out.println("La opción seleccionada no es válida");
+            }
+            System.out.println("Precione c para continuar");
+            leerTeclado.next();
         }
     }
     
