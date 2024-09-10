@@ -39,6 +39,7 @@ public class Principal {
                 System.out.println("**** Mostrar datos ****");
                 System.out.println(vehiculo.imprimirDatos());
                 System.out.println(cliente.imprimirDatos());
+                // ejercicio 26: Modificar formato de presentación de los datos
             }
             else if(opcion == 3)
             {
@@ -52,6 +53,7 @@ public class Principal {
             {
                 System.out.println("**** Enviando correo de aviso ****");
                 vehiculo.enviarCorreo();
+                // ejercicio 25: mostrar patente y correo en mayuscula
             }
             else if(opcion == 5)
             {
