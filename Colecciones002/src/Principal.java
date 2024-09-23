@@ -48,6 +48,18 @@ public class Principal {
         {
             System.out.println("|====> " + nombre);
         }
+        
+        // quitar elementos de la colección
+        nombres.remove(3);
+        nombres.remove("Ana");
+        
+        // mostrar cantidad de elementos
+        System.out.println("Cantidad de elementos: " + nombres.size());
+        for(String nombre: nombres)
+        {
+            System.out.println("|====> " + nombre);
+        }
+        // tarea : Leer ppt 2.1.1.
     }
     
 }
