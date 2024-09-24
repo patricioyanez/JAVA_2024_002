@@ -55,6 +55,10 @@ public class Principal {
         
         // mostrar cantidad de elementos
         System.out.println("Cantidad de elementos: " + nombres.size());
+        
+        // modificar valor de un objeto ingresado a la colección.
+        nombres.set(1, "Fernanda");
+        
         for(String nombre: nombres)
         {
             System.out.println("|====> " + nombre);
