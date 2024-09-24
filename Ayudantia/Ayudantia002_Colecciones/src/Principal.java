@@ -24,7 +24,9 @@ public class Principal {
             
             if(opcion == 3)
                 break;
-            
+// validar que nombre no este vacio y las notas
+// este en el rango de 10 a 70.
+// enviar mensaje con el error.
             if(opcion == 1)
             {
                 System.out.println(" ***** Ingreso de datos ***** ");
