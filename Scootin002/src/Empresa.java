@@ -33,10 +33,7 @@ public class Empresa {
         for(Empleado empleado: empleados)
         {
             if(empleado.getRut().equals(rut) )
-            {
-                empleados.remove(empleado);
-                return true;
-            }
+                return empleados.remove(empleado);
         }
         return false;
     }
