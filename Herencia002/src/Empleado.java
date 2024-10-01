@@ -38,11 +38,35 @@ public class Empleado extends Persona{
                 "\nSueldo   = " + sueldo;
     }
 
-    @Override
+    @Override /// ejemplo de sobreEscritura
     public int calcularEdad() {
         System.out.println("===== Edad de empleado =====");
         return super.calcularEdad(); //To change body of generated methods, choose Tools | Templates.
     }
     
     
+    // ejemplo de sobrecarga
+    public void calcularSueldo()
+    {
+        double liquido = 0;
+        System.out.println("==>Detalle");
+        System.out.println("Base    : " + sueldo);
+        System.out.println("Salud   : " + (int)(sueldo * 0.07));
+        System.out.println("AFP     : " + (int)(sueldo * 0.1));
+        liquido = sueldo - ((sueldo * 0.07) + (sueldo * .1));
+        System.out.println("Liquido : " + (int)liquido);
+      
+    }
+    public void calcularSueldo(int descuento)
+    {
+        double liquido = 0;
+        System.out.println("==>Detalle");
+        System.out.println("Base    : " + sueldo);
+        System.out.println("Salud   : " + (int)(sueldo * 0.07));
+        System.out.println("AFP     : " + (int)(sueldo * 0.1));
+        liquido = sueldo - ((sueldo * 0.07) + (sueldo * .1));
+        System.out.println("Descueto: " + descuento);
+        System.out.println("Liquido : " + ((int)liquido - descuento));
+      
+    }
 }

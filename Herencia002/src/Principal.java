@@ -13,6 +13,11 @@ public class Principal {
         System.out.println("\n ==== Datos Empleados ====");
         System.out.println(e);
         System.out.println(e.calcularEdad() + " años");
+        System.out.println("\n **** Sueldo Liquido ****");
+        e.calcularSueldo();
+        e.calcularSueldo(15000);
+        
+        // ppt 2.2.1
     }
     
 }
