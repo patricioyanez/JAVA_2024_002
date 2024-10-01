@@ -36,6 +36,13 @@ public class Cliente extends Persona {
                 "\nEs Habitual      = " + (esHabitual?"Si":"No") + 
                 "\nLinea De Credito = " + lineaDeCredito;
     }
+
+    @Override
+    public int calcularEdad() {
+        System.out.println("|=====> La edad del cliente es: ");
+        return  2024-this.getAnioNacimiento();
+    }
+    
     
     
     

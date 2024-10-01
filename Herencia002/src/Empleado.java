@@ -37,6 +37,12 @@ public class Empleado extends Persona{
                 "\nCargo    = " + cargo + 
                 "\nSueldo   = " + sueldo;
     }
+
+    @Override
+    public int calcularEdad() {
+        System.out.println("===== Edad de empleado =====");
+        return super.calcularEdad(); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

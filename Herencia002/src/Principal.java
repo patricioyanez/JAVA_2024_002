@@ -9,8 +9,10 @@ public class Principal {
         
         System.out.println(" ==== Datos Clientes ====");
         System.out.println(c);
+        System.out.println(c.calcularEdad());
         System.out.println("\n ==== Datos Empleados ====");
         System.out.println(e);
+        System.out.println(e.calcularEdad() + " años");
     }
     
 }
