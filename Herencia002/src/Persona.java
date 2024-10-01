@@ -50,13 +50,7 @@ public class Persona {
         this.anioNacimiento = anioNacimiento;
     }
 
-    @Override
-    public String toString() {
-        return  "\nRut              = " + rut + 
-                "\nNombre           = " + nombre + 
-                "\nAño de Nacimiento= " + anioNacimiento + 
-                "\nEmail            = " + email;
-    }
+
     
     
 }

@@ -9,7 +9,7 @@ public class Principal {
         
         System.out.println(" ==== Datos Clientes ====");
         System.out.println(c);
-        System.out.println(" ==== Datos Empleados ====");
+        System.out.println("\n ==== Datos Empleados ====");
         System.out.println(e);
     }
     
