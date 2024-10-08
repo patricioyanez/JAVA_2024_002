@@ -21,7 +21,10 @@ public class Principal {
     
     */
     public static void main(String[] args) {
-
+        Teclado t1 = new Teclado(105, true, 10, "Teclado agil", "Genius", 15000);
+        
+        
+        System.out.println(t1);
     }
     
 }
