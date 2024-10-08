@@ -59,5 +59,11 @@ public class Producto {
                 "\nPrecio   = " + precio;
     }
     
+    public void descuento(int porcentaje)
+    {
+        int des = (int)(this.precio - (this.precio*porcentaje/100));
+        System.out.println("==== descuento del producto ====");
+        System.out.println("Descuento " + porcentaje + "% : " + des);
+    }
     
 }

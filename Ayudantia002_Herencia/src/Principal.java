@@ -17,14 +17,23 @@ public class Principal {
     
         Ejercicio 4: Crear un nuevo teclado y solicitar los
     datos por teclado. (usar Scanner)
+    
     Leer ppt 2.1.1 y 2.2.1
     
     */
     public static void main(String[] args) {
         Teclado t1 = new Teclado(105, true, 10, "Teclado agil", "Genius", 15000);
+        Mouse m1 = new Mouse(4, true, 50, "Mouse", "Logi", 25000);
+        Mouse m2 = new Mouse(2, false, 55, "Mouse", "Genius", 5000);
         
-        
+        System.out.println("==== listado de teclados =====");
         System.out.println(t1);
+        
+        System.out.println("==== listado de Mouse ========");
+        System.out.println(m1);
+        
+        m1.descuento(10);
+        m2.descuento(50);
     }
     
 }
