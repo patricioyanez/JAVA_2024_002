@@ -1,5 +1,5 @@
 
-public abstract class Animal {
+public abstract class Animal implements IOperaciones{
     private int cantidadOjos;
     private int cantidadPatas;
     private String queSonidoEmite;
@@ -48,4 +48,11 @@ public abstract class Animal {
     }
     // definicion de metodo abstracto
     public abstract void mover();
+    
+    public void costoComida(int adicional)
+    {
+        System.out.println("El costo base es: " + COSTO_MINIMO_COMIDA);
+        System.out.println("Costo adicional : " + adicional);
+        System.out.println("Total Animal    : " + COSTO_MINIMO_COMIDA+adicional);
+    }
 }

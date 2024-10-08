@@ -20,11 +20,17 @@ public class Principal {
         for(Animal animal : zoologico)
         {
             animal.mover();
+            
             if(animal instanceof Ave)
             {
                 //((Ave) animal).comer();
                 Ave avecita = (Ave)animal;
                 avecita.comer();
+                avecita.costoComida(5000);
+            }
+            else
+            {
+                animal.costoComida(10000);
             }
         }
         
