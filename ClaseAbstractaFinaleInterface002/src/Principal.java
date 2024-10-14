@@ -1,11 +1,15 @@
-
 import java.util.ArrayList;
+
+/*
+    Realizar el ejercicio 2.1.2
+
+*/
 
 public class Principal {
 
     public static void main(String[] args) {
         // 211, 221, 231
-        // Animal a = new Animal(); // error
+        //Animal a = new Animal(); // error
         
         Ave pollo = new Ave();
         pollo.comer();
@@ -28,6 +32,9 @@ public class Principal {
             {
                 ((Ave) animal).mover();
             }
+            
+            animal.grabar();
+            animal.limpiar();
         }
     }
     

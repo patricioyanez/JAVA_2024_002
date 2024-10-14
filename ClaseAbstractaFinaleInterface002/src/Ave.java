@@ -8,6 +8,17 @@ public class Ave extends Animal{
     
     public void mover()
     {
-        System.out.println("moueve");
+        System.out.println("El ave vuela");
+    }
+
+    @Override
+    public int grabar() {
+        System.out.println("Datos del ave fueron guardados");
+        return 1;
+    }
+
+    @Override
+    public void limpiar() {
+        System.out.println("Datos en blanco");
     }
 }
