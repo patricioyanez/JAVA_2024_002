@@ -4,6 +4,8 @@ public abstract class Vehiculo implements IOperaciones{
     private String nombreDueno;
     private String marca;
     private String modelo;
+    private int totalServicio; //valor neto (sin IVA)
+    private int iva;
     private int totalPagar;
 
     public Vehiculo() {
@@ -11,15 +13,18 @@ public abstract class Vehiculo implements IOperaciones{
         this.nombreDueno = "";
         this.marca = "";
         this.modelo = "";
+        this.totalServicio = 0;
+        this.iva = 0;
         this.totalPagar = 0;
     }
     
-    public Vehiculo(String patente, String nombreDueno, String marca, String modelo, int totalPagar) {
+    public Vehiculo(String patente, String nombreDueno, String marca, String modelo, int totalServicio, int totalPagar) {
         this.patente = patente;
         this.nombreDueno = nombreDueno;
         this.marca = marca;
         this.modelo = modelo;
         this.totalPagar = totalPagar;
+        this.totalServicio = totalServicio;
     }
 
     public int getTotalPagar() {
@@ -28,6 +33,21 @@ public abstract class Vehiculo implements IOperaciones{
 
     public void setTotalPagar(int totalPagar) {
         this.totalPagar = totalPagar;
+    }
+
+    public int getIVA() {
+        return iva;
+    }
+
+    public void setIVA(int iva) {
+        this.iva = iva;
+    }
+    public int getTotalServicio() {
+        return totalServicio;
+    }
+
+    public void setTotalServicio(int totalServicio) {
+        this.totalServicio = totalServicio;
     }
 
     public String getPatente() {
@@ -68,8 +88,9 @@ public abstract class Vehiculo implements IOperaciones{
                 ",\nNombre de Dueño = " + nombreDueno + 
                 ",\nMarca           = " + marca + 
                 ",\nModelo          = " + modelo + 
+                ",\ntotal Servicio  = " + totalServicio + 
                 ",\nTotal a pagar   = " + totalPagar;
     }
     
-    
+    public abstract void totalPorPagar();
 }
