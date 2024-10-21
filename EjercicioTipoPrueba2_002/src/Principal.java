@@ -2,7 +2,16 @@
 public class Principal {
 
     public static void main(String[] args) {
-
+        Auto auto1 = new Auto(5, 350, "zads20", "Juan", "Lada", "LAdita", 20000, 0);
+        Moto moto1 = new Moto("Scooter", 50, "as5002", "Ana", "Suzuki", "sport", 50500, 0);
+        
+        Taller taller = new Taller();
+        
+        taller.guardar(auto1);
+        taller.guardar(moto1);
+        
+        auto1.getTotalPagar();
+        System.out.println(auto1);
     }
     
 }
