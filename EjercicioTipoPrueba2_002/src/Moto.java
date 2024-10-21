@@ -54,6 +54,13 @@ public final class Moto extends Vehiculo{
         int resultado = (int)(this.getTotalServicio() * DESCUENTO_MOTOCICLETA / 100);
         this.setTotalServicio(resultado);
     }
+    // sobre carga del método
+    public void obtenerDescuento(double descuento) {
+        int resultado = (int)(this.getTotalServicio() * descuento / 100);
+        this.setTotalServicio(resultado);
+    }
+    
+
     
 
 }

@@ -41,4 +41,19 @@ public class Taller {
             System.out.println(vehiculo);
         }
     }
+    public void contabilidar()
+    {
+        int moto = 0;
+        int auto = 0;
+        System.out.println("\n===== contabilizar vehiculos =====");
+        for (Vehiculo vehiculo : listado) {
+            if(vehiculo instanceof Moto)
+                moto++;
+            else
+                auto++;
+        }
+        
+        System.out.println("Cantidad de motos: " + moto);
+        System.out.println("Cantidad de autos: " + auto);
+    }
 }
