@@ -89,6 +89,7 @@ public abstract class Vehiculo implements IOperaciones{
                 ",\nMarca           = " + marca + 
                 ",\nModelo          = " + modelo + 
                 ",\ntotal Servicio  = " + totalServicio + 
+                ",\nIva             = " + iva + 
                 ",\nTotal a pagar   = " + totalPagar;
     }
     

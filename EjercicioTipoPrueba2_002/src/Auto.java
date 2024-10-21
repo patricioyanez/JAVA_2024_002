@@ -52,7 +52,7 @@ public class Auto extends Vehiculo{
     @Override
     public void obtenerDescuento() {
         int resultado = (int)(this.getTotalServicio() * DESCUENTO_AUTOMOVIL / 100);
-        this.setTotalServicio(resultado);
+        this.setTotalServicio(this.getTotalServicio() - resultado);
     }
     // sobre carga del método
     public void obtenerDescuento(double descuento) {

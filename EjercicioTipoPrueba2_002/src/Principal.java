@@ -10,7 +10,9 @@ public class Principal {
         taller.guardar(auto1);
         taller.guardar(moto1);
         
-        auto1.getTotalPagar();
+        auto1.obtenerDescuento();
+        auto1.totalConIVA();
+        auto1.totalPorPagar();
         System.out.println(auto1);
     }
     
