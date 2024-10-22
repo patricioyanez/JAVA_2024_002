@@ -15,6 +15,12 @@ public class Principal {
         auto1.totalConIVA();
         auto1.totalPorPagar();
         System.out.println(auto1);
+        
+        System.out.println("");
+        taller.listar();
+        
+        System.out.println("");
+        taller.contabilidar();
     }
     
 }

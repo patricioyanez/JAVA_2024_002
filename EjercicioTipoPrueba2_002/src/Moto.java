@@ -34,7 +34,7 @@ public final class Moto extends Vehiculo{
     public String toString() {
         return super.toString() + 
                 "\nEstilo            = " + estilo + 
-                "\nMedida deManillar = " + medidaManillar;
+                "\nMedida de Manillar= " + medidaManillar;
     }
 
     @Override

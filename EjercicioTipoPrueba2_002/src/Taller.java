@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 // crear los metodos CRUD
 public class Taller {
-    ArrayList<Vehiculo> listado = new ArrayList<Vehiculo>();
+    private ArrayList<Vehiculo> listado = new ArrayList<Vehiculo>();
     
     public boolean guardar(Vehiculo vehiculo)
     {
