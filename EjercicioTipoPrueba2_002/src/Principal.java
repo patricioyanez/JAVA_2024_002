@@ -16,6 +16,14 @@ public class Principal {
         auto1.totalPorPagar();
         System.out.println(auto1);
         
+        moto1.obtenerDescuento();
+        moto1.totalConIVA();
+        moto1.totalPorPagar();
+//        System.out.println(moto1);
+        
+        
+        
+        
         System.out.println("");
         taller.listar();
         

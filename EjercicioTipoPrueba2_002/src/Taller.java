@@ -11,7 +11,11 @@ public class Taller {
         if(this.buscarPorPatente(vehiculo.getPatente()))
             return false;
         else
+        {
+            vehiculo.totalConIVA();
+            vehiculo.totalPorPagar();
             return listado.add(vehiculo);
+        }
     }
     
     public boolean buscarPorPatente(String patente)
