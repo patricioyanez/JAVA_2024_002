@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vista;
+
+import javax.swing.JOptionPane;
+import modelo.Marca;
 
 /**
  *
@@ -63,6 +61,11 @@ public class FrmMarca extends javax.swing.JFrame {
         });
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnBuscar.setText("Buscar");
 
@@ -159,6 +162,38 @@ public class FrmMarca extends javax.swing.JFrame {
         chkHabilitado.setSelected(false);
         txtId.requestFocus();
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here
+        // validar
+        if(txtId.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "Debe especificar el id");
+            txtId.requestFocus();
+        }        
+        else if(txtNombre.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "Debe especificar el nombre");
+            txtNombre.requestFocus();
+        }
+        else
+        {
+            // datos al objeto        
+            // entrega de objeto al controlador
+            Marca marca = new Marca();
+            int id = Integer.parseInt(txtId.getText());
+            marca.setId(id);
+            marca.setNombre(txtNombre.getText().toUpperCase());
+            marca.setHabilitado(chkHabilitado.isSelected());
+            
+            // instanciar controlador y entregar el obj marca
+            // ..... 
+            
+            
+        }
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
