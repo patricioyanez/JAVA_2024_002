@@ -10,6 +10,7 @@ public class Principal {
         taller.guardar(auto1);
         taller.guardar(moto1);
         
+        System.out.println("Total por pagar patente zads20:");
         auto1.obtenerDescuento();
         auto1.totalConIVA();
         auto1.totalPorPagar();
