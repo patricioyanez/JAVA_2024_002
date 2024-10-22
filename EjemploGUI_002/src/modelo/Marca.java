@@ -42,6 +42,11 @@ public class Marca {
         this.nombre = nombre;
     }
     
-    
+    public void limpiar()
+    {
+        this.id = 0;
+        this.nombre = "";
+        this.habilitado = false; 
+    }
     
 }
