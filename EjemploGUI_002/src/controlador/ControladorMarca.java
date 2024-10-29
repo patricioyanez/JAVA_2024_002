@@ -17,9 +17,15 @@ public class ControladorMarca {
             String sql = "INSERT INTO marca (nombre, habilitado) VALUES (?,?)";
             PreparedStatement st;
             st = cx.prepareStatement(sql);
+            st.setString(1, marca.getNombre());
+            st.setBoolean(2, marca.isHabilitado());
+            st.executeUpdate();
+            st.close();
+            cx.close();
+            return true;
         } catch (SQLException ex) {
             System.out.println("Error: " + ex.getMessage());
         }
-        
+        return false;
     }
 }

@@ -1,5 +1,6 @@
 package vista;
 
+import controlador.ControladorMarca;
 import javax.swing.JOptionPane;
 import modelo.Marca;
 
@@ -190,8 +191,19 @@ public class FrmMarca extends javax.swing.JFrame {
             
             // instanciar controlador y entregar el obj marca
             // ..... 
+            ControladorMarca cm = new ControladorMarca();
             
+            boolean respuesta = cm.agregar(marca);
             
+            if(respuesta)
+            {
+                JOptionPane.showMessageDialog(this, "Datos Guardados");
+                btnLimpiar.doClick();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Error en la operación");
+            }
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
