@@ -4,6 +4,10 @@ CREATE TABLE Marca(
     habilitado  int not null,
     unique(nombre)    
 );
+
+
+-- crear CRUD para la tabla categoria
+
 CREATE TABLE Categoria(
     id          int primary key auto_increment,
     nombre      varchar(100) not null,
