@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import modelo.Marca;
 
 public class ControladorMarca {
@@ -70,5 +71,30 @@ public class ControladorMarca {
         }
         return marca;
     }
-    
+    public ArrayList<Marca> buscarTodo()
+    {
+        ArrayList<Marca> listado = new ArrayList<Marca>();
+        try {
+            Conexion con = new Conexion();
+            Connection cx = con.obtenerConexion();
+            String sql = "SELECT id, nombre, habilitado FROM MARCA";        
+            PreparedStatement st = cx.prepareStatement(sql);
+           
+            ResultSet rs = st.executeQuery();
+            
+            while(rs.next())
+            {
+                Marca marca = new Marca();
+                marca.setId(rs.getInt("id"));
+                marca.setNombre(rs.getString("nombre"));
+                marca.setHabilitado(rs.getInt("habilitado")==1);
+                listado.add(marca);
+            }
+            st.close();
+            cx.close();
+        } catch (SQLException ex) {
+            System.out.println("Error: " + ex.getMessage());        
+        }
+        return listado;
+    }
 }
