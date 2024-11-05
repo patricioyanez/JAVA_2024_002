@@ -28,6 +28,27 @@ public class ControladorMarca {
         }
         return false;
     }
+    public boolean actualizar(Marca marca)
+    {
+        try {
+            Conexion con = new Conexion();
+            Connection cx = con.obtenerConexion();
+
+            String sql = "UPDATE marca SET nombre=?, habilitado=? WHERE id=?";
+            PreparedStatement st;
+            st = cx.prepareStatement(sql);
+            st.setString(1, marca.getNombre());
+            st.setBoolean(2, marca.isHabilitado());
+            st.setInt(3, marca.getId());
+            st.executeUpdate();
+            st.close();
+            cx.close();
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
+        return false;
+    }
     public boolean eliminar(int id)
     {
         try {

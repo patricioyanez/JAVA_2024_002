@@ -205,13 +205,7 @@ public class FrmMarca extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here
         // validar
-        if(txtId.getText().trim().length() == 0)
-        {
-            JOptionPane.showMessageDialog(this, 
-                    "Debe especificar el id");
-            txtId.requestFocus();
-        }        
-        else if(txtNombre.getText().trim().length() == 0)
+        if(txtNombre.getText().trim().length() == 0)
         {
             JOptionPane.showMessageDialog(this, 
                     "Debe especificar el nombre");
@@ -219,10 +213,10 @@ public class FrmMarca extends javax.swing.JFrame {
         }
         else
         {
-            // datos al objeto        
+            // traspasar los datos al objeto        
             // entrega de objeto al controlador
             Marca marca = new Marca();
-            int id = Integer.parseInt(txtId.getText());
+            int id = Integer.parseInt("0" + txtId.getText());
             marca.setId(id);
             marca.setNombre(txtNombre.getText().toUpperCase());
             marca.setHabilitado(chkHabilitado.isSelected());
@@ -231,12 +225,17 @@ public class FrmMarca extends javax.swing.JFrame {
             // ..... 
             ControladorMarca cm = new ControladorMarca();
             
-            boolean respuesta = cm.agregar(marca);
+            boolean respuesta = false;
+            if(marca.getId() < 1)
+                respuesta = cm.agregar(marca);
+            else
+                respuesta = cm.actualizar(marca);
             
             if(respuesta)
             {
                 JOptionPane.showMessageDialog(this, "Datos Guardados");
                 btnLimpiar.doClick();
+                btnListarActionPerformed(null);
             }
             else
             {
@@ -292,6 +291,7 @@ public class FrmMarca extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(this, "El id fue eliminado");
                 btnLimpiarActionPerformed(null);
+                btnListarActionPerformed(null);
             }
             else
             {
