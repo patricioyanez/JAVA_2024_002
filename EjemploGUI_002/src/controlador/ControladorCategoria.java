@@ -5,20 +5,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import modelo.Marca;
+import modelo.Categoria;
 
-public class ControladorMarca {
-    public boolean agregar(Marca marca)
+public class ControladorCategoria {
+    public boolean agregar(Categoria categoria)
     {
         try {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
 
-            String sql = "INSERT INTO Marca (nombre, habilitado) VALUES (?,?)";
+            String sql = "INSERT INTO Categoria (nombre, habilitado) VALUES (?,?)";
             PreparedStatement st;
             st = cx.prepareStatement(sql);
-            st.setString(1, marca.getNombre());
-            st.setBoolean(2, marca.isHabilitado());
+            st.setString(1, categoria.getNombre());
+            st.setBoolean(2, categoria.isHabilitado());
             st.executeUpdate();
             st.close();
             cx.close();
@@ -28,18 +28,18 @@ public class ControladorMarca {
         }
         return false;
     }
-    public boolean actualizar(Marca marca)
+    public boolean actualizar(Categoria categoria)
     {
         try {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
 
-            String sql = "UPDATE Marca SET nombre=?, habilitado=? WHERE id=?";
+            String sql = "UPDATE Categoria SET nombre=?, habilitado=? WHERE id=?";
             PreparedStatement st;
             st = cx.prepareStatement(sql);
-            st.setString(1, marca.getNombre());
-            st.setBoolean(2, marca.isHabilitado());
-            st.setInt(3, marca.getId());
+            st.setString(1, categoria.getNombre());
+            st.setBoolean(2, categoria.isHabilitado());
+            st.setInt(3, categoria.getId());
             st.executeUpdate();
             st.close();
             cx.close();
@@ -54,7 +54,7 @@ public class ControladorMarca {
         try {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
-            String sql = "DELETE FROM Marca WHERE id = ?";        
+            String sql = "DELETE FROM Categoria WHERE id = ?";        
             PreparedStatement st = cx.prepareStatement(sql);
             st.setInt(1, id);
             
@@ -67,49 +67,49 @@ public class ControladorMarca {
         }
         return false;
     }
-    public Marca buscarPorId(int id)
+    public Categoria buscarPorId(int id)
     {
-        Marca marca = null;
+        Categoria categoria = null;
         try {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
-            String sql = "SELECT id, nombre, habilitado FROM Marca WHERE id = ?";        
+            String sql = "SELECT id, nombre, habilitado FROM Categoria WHERE id = ?";        
             PreparedStatement st = cx.prepareStatement(sql);
             st.setInt(1, id);
             
             ResultSet rs = st.executeQuery();
             if(rs.next())
             {
-                marca = new Marca();
-                marca.setId(rs.getInt("id"));
-                marca.setNombre(rs.getString("nombre"));
-                marca.setHabilitado(rs.getInt("habilitado")==1);
+                categoria = new Categoria();
+                categoria.setId(rs.getInt("id"));
+                categoria.setNombre(rs.getString("nombre"));
+                categoria.setHabilitado(rs.getInt("habilitado")==1);
             }
             st.close();
             cx.close();
         } catch (SQLException ex) {
             System.out.println("Error: " + ex.getMessage());        
         }
-        return marca;
+        return categoria;
     }
-    public ArrayList<Marca> buscarTodo()
+    public ArrayList<Categoria> buscarTodo()
     {
-        ArrayList<Marca> listado = new ArrayList<Marca>();
+        ArrayList<Categoria> listado = new ArrayList<Categoria>();
         try {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
-            String sql = "SELECT id, nombre, habilitado FROM Marca";        
+            String sql = "SELECT id, nombre, habilitado FROM Categoria";        
             PreparedStatement st = cx.prepareStatement(sql);
            
             ResultSet rs = st.executeQuery();
             
             while(rs.next())
             {
-                Marca marca = new Marca();
-                marca.setId(rs.getInt("id"));
-                marca.setNombre(rs.getString("nombre"));
-                marca.setHabilitado(rs.getInt("habilitado")==1);
-                listado.add(marca);
+                Categoria categoria = new Categoria();
+                categoria.setId(rs.getInt("id"));
+                categoria.setNombre(rs.getString("nombre"));
+                categoria.setHabilitado(rs.getInt("habilitado")==1);
+                listado.add(categoria);
             }
             st.close();
             cx.close();
