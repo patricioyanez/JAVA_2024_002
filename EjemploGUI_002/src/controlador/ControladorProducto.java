@@ -42,12 +42,18 @@ public class ControladorProducto {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
 
-            String sql = "UPDATE Producto SET nombre=?, habilitado=? WHERE id=?";
+            String sql = "UPDATE Producto SET idMarca=?, idCategoria=?, codigo=? " +
+                        "descripcion=?, stock=?, precioCosto=?, precioVenta=? WHERE id=?";
             PreparedStatement st;
             st = cx.prepareStatement(sql);
-            st.setString(1, producto.getNombre());
-            st.setBoolean(2, producto.isHabilitado());
-            st.setInt(3, producto.getId());
+            st.setInt(1, producto.getIdMarca());
+            st.setInt(2, producto.getIdCategoria());
+            st.setLong(3, producto.getCodigo());
+            st.setString(4, producto.getDescripcion());
+            st.setInt(5, producto.getStock());
+            st.setInt(6, producto.getPrecioCosto());
+            st.setInt(7, producto.getPrecioVenta());
+            st.setInt(8, producto.getId());
             st.executeUpdate();
             st.close();
             cx.close();
@@ -81,7 +87,9 @@ public class ControladorProducto {
         try {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
-            String sql = "SELECT id, nombre, habilitado FROM Producto WHERE id = ?";        
+            String sql = "SELECT idMarca, idCategoria, codigo, " +
+                                "descripcion, stock, precioCosto, precioVenta"+
+                        " FROM Producto WHERE id = ?";        
             PreparedStatement st = cx.prepareStatement(sql);
             st.setInt(1, id);
             
@@ -90,8 +98,13 @@ public class ControladorProducto {
             {
                 producto = new Producto();
                 producto.setId(rs.getInt("id"));
-                producto.setNombre(rs.getString("nombre"));
-                producto.setHabilitado(rs.getInt("habilitado")==1);
+                producto.setIdMarca(rs.getInt("idMarca"));
+                producto.setIdCategoria(rs.getInt("idCategoria"));
+                producto.setCodigo(rs.getInt("codigo"));
+                producto.setDescripcion(rs.getString("descripcion"));
+                producto.setStock(rs.getInt("stock"));
+                producto.setPrecioCosto(rs.getInt("precioCosto"));
+                producto.setPrecioVenta(rs.getInt("precioVenta"));
             }
             st.close();
             cx.close();
@@ -106,7 +119,8 @@ public class ControladorProducto {
         try {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
-            String sql = "SELECT id, nombre, habilitado FROM Producto";        
+            String sql = "SELECT idMarca, idCategoria, codigo, descripcion," +
+                                " stock, precioCosto, precioVenta FROM Producto";        
             PreparedStatement st = cx.prepareStatement(sql);
            
             ResultSet rs = st.executeQuery();
@@ -115,8 +129,13 @@ public class ControladorProducto {
             {
                 Producto producto = new Producto();
                 producto.setId(rs.getInt("id"));
-                producto.setNombre(rs.getString("nombre"));
-                producto.setHabilitado(rs.getInt("habilitado")==1);
+                producto.setIdMarca(rs.getInt("idMarca"));
+                producto.setIdCategoria(rs.getInt("idCategoria"));
+                producto.setCodigo(rs.getInt("codigo"));
+                producto.setDescripcion(rs.getString("descripcion"));
+                producto.setStock(rs.getInt("stock"));
+                producto.setPrecioCosto(rs.getInt("precioCosto"));
+                producto.setPrecioVenta(rs.getInt("precioVenta"));
                 listado.add(producto);
             }
             st.close();
