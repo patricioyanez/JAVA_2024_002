@@ -120,7 +120,7 @@ public class ControladorProducto {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
             String sql = "SELECT idMarca, idCategoria, codigo, descripcion," +
-                                " stock, precioCosto, precioVenta FROM Producto";        
+                                " stock, precioCosto, precioVenta FROM Producto  ORDER BY descripcion";        
             PreparedStatement st = cx.prepareStatement(sql);
            
             ResultSet rs = st.executeQuery();

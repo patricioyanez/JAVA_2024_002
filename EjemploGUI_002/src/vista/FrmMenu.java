@@ -31,6 +31,7 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         marca = new javax.swing.JMenuItem();
         categoria = new javax.swing.JMenuItem();
+        producto = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -57,6 +58,14 @@ public class FrmMenu extends javax.swing.JFrame {
             }
         });
         jMenu1.add(categoria);
+
+        producto.setText("Producto");
+        producto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                productoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(producto);
 
         jMenuBar1.add(jMenu1);
 
@@ -104,6 +113,11 @@ public class FrmMenu extends javax.swing.JFrame {
         new FrmCategoria().setVisible(true);
     }//GEN-LAST:event_categoriaActionPerformed
 
+    private void productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productoActionPerformed
+        // TODO add your handling code here:
+        new FrmProducto().setVisible(true);
+    }//GEN-LAST:event_productoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -149,5 +163,6 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem marca;
+    private javax.swing.JMenuItem producto;
     // End of variables declaration//GEN-END:variables
 }

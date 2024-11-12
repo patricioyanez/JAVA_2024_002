@@ -98,7 +98,7 @@ public class ControladorCategoria {
         try {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
-            String sql = "SELECT id, nombre, habilitado FROM Categoria";        
+            String sql = "SELECT id, nombre, habilitado FROM Categoria ORDER BY nombre";        
             PreparedStatement st = cx.prepareStatement(sql);
            
             ResultSet rs = st.executeQuery();
