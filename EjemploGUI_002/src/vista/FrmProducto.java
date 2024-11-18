@@ -81,14 +81,21 @@ public class FrmProducto extends javax.swing.JFrame {
 
         jLabel9.setText("Precio Venta");
 
+        btnBuscar.setBackground(new java.awt.Color(0, 204, 0));
         btnBuscar.setText("Buscar");
 
+        btnEliminar.setBackground(new java.awt.Color(153, 153, 153));
         btnEliminar.setText("Eliminar");
 
+        btnListar.setBackground(new java.awt.Color(204, 204, 0));
         btnListar.setText("Listar");
 
+        btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
         btnLimpiar.setText("Limpiar");
 
+        btnGuardar.setBackground(new java.awt.Color(255, 0, 0));
+        btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardar.setText("Guardar");
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
@@ -167,7 +174,7 @@ public class FrmProducto extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(14, 14, 14)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -211,6 +211,18 @@ public class FrmMarca extends javax.swing.JFrame {
                     "Debe especificar el nombre");
             txtNombre.requestFocus();
         }
+        else if(!Validacion.Validacion.soloLetras(txtNombre.getText()))
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "El nombre contiene caracteres no validos");
+            txtNombre.requestFocus();
+        }
+        else if(txtNombre.getText().trim().length() > 100)
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "El nombre excede la cantidad de caracteres permitidos");
+            txtNombre.requestFocus(); 
+        }
         else
         {
             // traspasar los datos al objeto        
