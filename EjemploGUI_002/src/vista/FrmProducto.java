@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.ControladorMarca;
+import controlador.ControladorCategoria;
 
 /**
  *
@@ -115,8 +116,6 @@ public class FrmProducto extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tabla);
-
-        cmbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -230,6 +229,7 @@ public class FrmProducto extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         cmbMarca.setModel(new ControladorMarca().llenarComboBox());
+        cmbCategoria.setModel(new ControladorCategoria().llenarComboBox());
     }//GEN-LAST:event_formWindowOpened
 
     /**

@@ -187,8 +187,8 @@ public class FrmMarca extends javax.swing.JFrame {
                     .addComponent(btnEliminar)
                     .addComponent(btnListar))
                 .addGap(30, 30, 30)
-                .addComponent(grilla, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addComponent(grilla, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();

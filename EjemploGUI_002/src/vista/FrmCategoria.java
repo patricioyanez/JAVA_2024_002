@@ -211,6 +211,18 @@ public class FrmCategoria extends javax.swing.JFrame {
                     "Debe especificar el nombre");
             txtNombre.requestFocus();
         }
+        else if(!Validacion.Validacion.soloLetras(txtNombre.getText()))
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "El nombre contiene caracteres no validos");
+            txtNombre.requestFocus();
+        }
+        else if(txtNombre.getText().trim().length() > 100)
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "El nombre excede la cantidad de caracteres permitidos");
+            txtNombre.requestFocus(); 
+        }
         else
         {
             // traspasar los datos al objeto        
@@ -252,6 +264,12 @@ public class FrmCategoria extends javax.swing.JFrame {
                     "Debe especificar el id");
             txtId.requestFocus();
         }
+        else if(!Validacion.Validacion.soloNumeros(txtId.getText()))
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "Solo debe ingresar caracteres numericos");
+            txtId.requestFocus();
+        }
         else
         {
             int id = Integer.parseInt(txtId.getText());
@@ -278,6 +296,12 @@ public class FrmCategoria extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, 
                     "Debe especificar el id");
+            txtId.requestFocus();
+        }
+        else if(!Validacion.Validacion.soloNumeros(txtId.getText()))
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "Solo debe ingresar caracteres numericos");
             txtId.requestFocus();
         }
         else
