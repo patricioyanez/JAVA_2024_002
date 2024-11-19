@@ -264,6 +264,12 @@ public class FrmMarca extends javax.swing.JFrame {
                     "Debe especificar el id");
             txtId.requestFocus();
         }
+        else if(!Validacion.Validacion.soloNumeros(txtId.getText()))
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "Solo debe ingresar caracteres numericos");
+            txtId.requestFocus();
+        }
         else
         {
             int id = Integer.parseInt(txtId.getText());
@@ -290,6 +296,12 @@ public class FrmMarca extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, 
                     "Debe especificar el id");
+            txtId.requestFocus();
+        }
+        else if(!Validacion.Validacion.soloNumeros(txtId.getText()))
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "Solo debe ingresar caracteres numericos");
             txtId.requestFocus();
         }
         else
