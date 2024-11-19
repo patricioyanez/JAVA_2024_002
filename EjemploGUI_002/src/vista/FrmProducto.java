@@ -7,6 +7,10 @@ package vista;
 
 import controlador.ControladorMarca;
 import controlador.ControladorCategoria;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import modelo.Marca;
 
@@ -86,6 +90,11 @@ public class FrmProducto extends javax.swing.JFrame {
 
         btnBuscar.setBackground(new java.awt.Color(0, 204, 0));
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setBackground(new java.awt.Color(153, 153, 153));
         btnEliminar.setText("Eliminar");
@@ -283,6 +292,48 @@ public class FrmProducto extends javax.swing.JFrame {
         txtId.requestFocus();        
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        this.seleccionarPorId(cmbMarca, 28); // 28 es un id existente en la bdd
+        
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    public void seleccionarPorId(javax.swing.JComboBox<?> comboBox, int id){
+        javax.swing.DefaultComboBoxModel<?> model = (javax.swing.DefaultComboBoxModel<?>) comboBox.getModel();
+        comboBox.setSelectedIndex(0);
+        for (int i = 0; i < model.getSize(); i++) {
+            Object element = model.getElementAt(i);
+
+            try {
+                int elementId = (int) element.getClass().getMethod("getId").invoke(element);
+                if (elementId == id)
+                {
+                    comboBox.setSelectedIndex(i);
+                    return;
+                }
+            } catch (NoSuchMethodException | SecurityException ex) {
+                System.out.println("Error: " + ex.getMessage());
+            } catch (Exception ex) {
+                System.out.println("Error: " + ex.getMessage());
+            }        
+        }
+    }
+    
+//    public static void seleccionarPorIdMarca(JComboBox<Marca> comboBox, int id) {
+//        // Obtener el modelo del JComboBox
+//        ComboBoxModel<Marca> model = comboBox.getModel();
+//
+//        // Recorrer los elementos del modelo
+//        for (int i = 0; i < model.getSize(); i++) {
+//            // Comparar el ID de la marca
+//            if (model.getElementAt(i).getId() == id) {
+//                comboBox.setSelectedIndex(i); // Seleccionar el índice del producto
+//                break; // Salir del bucle una vez encontrado
+//            }
+//        }
+//    }                                        
+
+    
     /**
      * @param args the command line arguments
      */

@@ -147,4 +147,12 @@ public class ControladorCategoria {
         }
         return new javax.swing.DefaultComboBoxModel(listado);
     }
+//    public int seleccionarPorId(javax.swing.JComboBox comboBox, int id) {
+//        javax.swing.DefaultComboBoxModel<Categoria> model = (javax.swing.DefaultComboBoxModel<Categoria>) comboBox.getModel();
+//        for (int i = 0; i < model.getSize(); i++) {
+//            if (model.getElementAt(i).getId() == id)
+//                return i;            
+//        }
+//        return 0;
+//    }
 }
