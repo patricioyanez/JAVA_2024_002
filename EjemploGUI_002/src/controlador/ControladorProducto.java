@@ -87,7 +87,7 @@ public class ControladorProducto {
         try {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
-            String sql = "SELECT idMarca, idCategoria, codigo, " +
+            String sql = "SELECT id, idMarca, idCategoria, codigo, " +
                                 "descripcion, stock, precioCosto, precioVenta"+
                         " FROM Producto WHERE id = ?";        
             PreparedStatement st = cx.prepareStatement(sql);
@@ -100,7 +100,7 @@ public class ControladorProducto {
                 producto.setId(rs.getInt("id"));
                 producto.setIdMarca(rs.getInt("idMarca"));
                 producto.setIdCategoria(rs.getInt("idCategoria"));
-                producto.setCodigo(rs.getInt("codigo"));
+                producto.setCodigo(rs.getLong("codigo"));
                 producto.setDescripcion(rs.getString("descripcion"));
                 producto.setStock(rs.getInt("stock"));
                 producto.setPrecioCosto(rs.getInt("precioCosto"));
@@ -119,7 +119,7 @@ public class ControladorProducto {
         try {
             Conexion con = new Conexion();
             Connection cx = con.obtenerConexion();
-            String sql = "SELECT idMarca, idCategoria, codigo, descripcion," +
+            String sql = "SELECT id,idMarca, idCategoria, codigo, descripcion," +
                                 " stock, precioCosto, precioVenta FROM Producto  ORDER BY descripcion";        
             PreparedStatement st = cx.prepareStatement(sql);
            
@@ -131,7 +131,7 @@ public class ControladorProducto {
                 producto.setId(rs.getInt("id"));
                 producto.setIdMarca(rs.getInt("idMarca"));
                 producto.setIdCategoria(rs.getInt("idCategoria"));
-                producto.setCodigo(rs.getInt("codigo"));
+                producto.setCodigo(rs.getLong("codigo"));
                 producto.setDescripcion(rs.getString("descripcion"));
                 producto.setStock(rs.getInt("stock"));
                 producto.setPrecioCosto(rs.getInt("precioCosto"));

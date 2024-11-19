@@ -7,12 +7,10 @@ package vista;
 
 import controlador.ControladorMarca;
 import controlador.ControladorCategoria;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ComboBoxModel;
-import javax.swing.JComboBox;
+import controlador.ControladorProducto;
 import javax.swing.JOptionPane;
 import modelo.Marca;
+import modelo.Producto;
 
 /**
  *
@@ -294,7 +292,43 @@ public class FrmProducto extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        this.seleccionarPorId(cmbMarca, 28); // 28 es un id existente en la bdd
+        if(txtId.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "Debe especificar el id");
+            txtId.requestFocus();
+        }
+        else if(!Validacion.Validacion.soloNumeros(txtId.getText()))
+        {
+            JOptionPane.showMessageDialog(this, 
+                    "Solo debe ingresar caracteres numericos");
+            txtId.requestFocus();
+        }
+        else
+        {
+            int id = Integer.parseInt(txtId.getText());
+            
+            ControladorProducto cp = new ControladorProducto();
+            Producto producto = cp.buscarPorId(id);
+            
+            if(producto == null)
+            {
+                JOptionPane.showMessageDialog(this, "Id no encontrado");
+            }
+            else
+            {
+                this.seleccionarPorId(cmbMarca, producto.getIdMarca());
+                this.seleccionarPorId(cmbCategoria, producto.getIdCategoria());
+                txtCodigo.setText("" + producto.getCodigo());
+                txtDescripcion.setText(producto.getDescripcion());
+                txtStock.setText("" + producto.getStock());
+                txtPrecioCosto.setText("" + producto.getPrecioCosto());
+                txtPrecioVenta.setText("" + producto.getPrecioVenta());
+            }
+        }
+        
+        
+        
         
     }//GEN-LAST:event_btnBuscarActionPerformed
 
